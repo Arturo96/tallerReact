@@ -1,7 +1,3 @@
-import {heroes} from './heroes';
+import {showGIF, showGIFAsync} from './giphy';
 
-const getHeroeById = (id) => heroes.find(heroe => heroe.id === id);
-
-const getHeroeByOwner = (owner) => heroes.filter(heroe => heroe.owner === owner);
-
-console.log(getHeroeByOwner('DC'));
+showGIFAsync();
