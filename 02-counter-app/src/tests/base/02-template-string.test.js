@@ -1,5 +1,5 @@
-const { getSaludo } = require("../../base-pruebas/02-template-string");
 import '@testing-library/jest-dom';
+const { getSaludo } = require("../../base-pruebas/02-template-string");
 
 describe('EL test del archivo 02-template-string.js', () => {
 
