@@ -19,6 +19,20 @@ describe('Pruebas del componente Hola', () => {
         expect(wrapper).toMatchSnapshot();
 
     })
+
+    test('debe de mostrar el subtitulo enviado por props', () => {
+        const saludo = 'Hola Arturo';
+        const subTitle = 'Esto es un subtitulo';
+        
+        const wrapper = shallow(<Hola 
+            saludo={saludo}
+            subtitle={subTitle}
+            />);
+
+        const elParrafo = wrapper.find('p').text();
+        expect(elParrafo).toBe(subTitle);
+    })
+    
     
     
 })

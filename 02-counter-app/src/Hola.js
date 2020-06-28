@@ -1,21 +1,21 @@
 import React from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 const Hola = ({ saludo, subtitle }) => {
 	return (
 		<>
-			<h1>Hola Mundo Component !!!!</h1>
-    <h2>{saludo}</h2>
+			<h1>{saludo}</h1>
+			<p>{subtitle}</p>
 		</>
 	);
 };
 
 Hola.propTypes = {
-    saludo: PropTypes.string.isRequired
-}
+	saludo: PropTypes.string.isRequired
+};
 
 Hola.defaultProps = {
-    subtitle: 'Random'
-}
+	subtitle: "Random"
+};
 
 export default Hola;

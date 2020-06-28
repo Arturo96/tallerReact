@@ -3,10 +3,10 @@
 exports[`Pruebas del componente Hola debe de mostrar <Hola /> correctamente  1`] = `
 <Fragment>
   <h1>
-    Hola Mundo Component
-  </h1>
-  <h2>
     Hola Arturo
-  </h2>
+  </h1>
+  <p>
+    Random
+  </p>
 </Fragment>
 `;
