@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas del componente Hola debe de mostrar <Hola /> correctamente  1`] = `
+<Fragment>
+  <h1>
+    Hola Mundo Component
+  </h1>
+  <h2>
+    Hola Arturo
+  </h2>
+</Fragment>
+`;

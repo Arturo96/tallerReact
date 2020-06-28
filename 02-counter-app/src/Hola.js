@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const Hola = ({ saludo, subtitle }) => {
 	return (
 		<>
-			<h1>Hola Mundo Component</h1>
+			<h1>Hola Mundo Component !!!!</h1>
     <h2>{saludo}</h2>
 		</>
 	);
