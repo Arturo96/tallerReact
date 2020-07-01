@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { AddMarca } from "./components/AddMarca";
+import { GifGrid } from "./components/GifGrid";
 
 export const GifExpertApp = () => {
-	const [marcas, setMarcas] = useState(["Xiaomi", "Samsung", "Huawei"]);
+	const [marcas, setMarcas] = useState(["Simpson"]);
 
-	const agregarMarca = (marca) => setMarcas([...marcas, marca]);
+	const agregarMarca = (marca) => setMarcas([marca, ...marcas]);
 
 	return (
 		<>
@@ -15,7 +16,9 @@ export const GifExpertApp = () => {
 
 			<ol>
 				{marcas.map(marca => (
-					<li key={marca}>{marca}</li>
+					<GifGrid 
+					key={marca}
+					category={marca} />
 				))}
 			</ol>
 		</>

@@ -9,3 +9,19 @@ input {
     color: gray;
     padding: 0.25em;
 }
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 1rem;
+}
+
+.card {
+    border: 2px solid gray;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.card img {
+    max-width: 100%;
+}
