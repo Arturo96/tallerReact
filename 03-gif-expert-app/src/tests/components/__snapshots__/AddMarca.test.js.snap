@@ -4,6 +4,7 @@ exports[`Pruebas en AddMarca debe de mostrarse correctamente 1`] = `
 <form
   onSubmit={[Function]}
 >
+  <p />
   <input
     onChange={[Function]}
     type="text"

@@ -5,10 +5,14 @@ export const AddMarca = ({agregarMarca}) => {
 
     const [inputValue, setInputValue] = useState('')
 
-    const handleInputChange = (e) => setInputValue(e.target.value);
-
+    const handleInputChange = (e) => {
+        setInputValue(e.target.value);
+    } 
+    
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        console.log('Se llamó el handle Submit', inputValue);
         if(inputValue.trim().length > 2) {
             agregarMarca(inputValue);
             setInputValue('');
@@ -17,6 +21,7 @@ export const AddMarca = ({agregarMarca}) => {
 
     return (
         <form onSubmit={handleSubmit}>
+            <p>{inputValue}</p>
             <input type="text" 
             value={inputValue}
             onChange={handleInputChange}
