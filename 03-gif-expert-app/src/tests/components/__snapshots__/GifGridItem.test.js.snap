@@ -8,8 +8,8 @@ exports[`Pruebas del componente GifGridItem Debe de mostrar el componente correc
     alt="Un título"
     src="https://localhost/algo.jpg"
   />
-  <h4>
+  <p>
     Un título
-  </h4>
+  </p>
 </div>
 `;
