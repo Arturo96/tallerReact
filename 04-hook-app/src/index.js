@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import { HookApp } from './HookApp';
+import { CounterApp } from './components/01-useState/CounterApp';
+// import { HookApp } from './HookApp';
 
 ReactDOM.render(
   <React.StrictMode>
-    <HookApp />
+    <CounterApp />
   </React.StrictMode>,
   document.getElementById('root')
 );
