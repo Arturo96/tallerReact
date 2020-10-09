@@ -1,0 +1,8 @@
+.complete {
+    text-decoration: line-through;
+}
+
+.tarea {
+    display: flex;
+    justify-content: space-between;
+}
