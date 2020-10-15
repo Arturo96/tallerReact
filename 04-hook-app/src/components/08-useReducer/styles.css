@@ -1,8 +1,18 @@
-.complete {
-    text-decoration: line-through;
+body {
+    padding: 50px;
 }
 
-.tarea {
+p {
+    margin: 0;
+    cursor: pointer;
+}
+
+.list-group-item {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+.complete {
+    text-decoration: line-through;
 }

@@ -14,11 +14,11 @@ export const useForm = (initialState = {}) => {
         });
     }
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log(values);
-    }
+    // const handleSubmit = (e) => {
+    //     e.preventDefault();
+    //     console.log(values);
+    // }
     
 
-    return [values, handleInputChange, handleSubmit, reset];
+    return [values, handleInputChange, reset];
 }

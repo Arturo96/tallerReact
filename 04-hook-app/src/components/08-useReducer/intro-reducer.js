@@ -1,32 +1,29 @@
-
 const initialState = [{
     id: 1,
-    todo: 'Estudiar JS',
+    tarea: 'Comprar pan',
     done: false
-}]
+}];
 
 const todoReducer = (state = initialState, action) => {
 
-    if(action?.type === 'agregar') {
-        return [...state, action.payload]
-    }
-
+    if(action?.type === 'agregar') return [...state, action.payload]
+    
     return state;
 }
 
-
 let todos = todoReducer();
 
-const newTodo = {
+const nuevaTarea = {
     id: 2,
-    todo: 'Estudiar HTML',
+    tarea: 'Estudiar HTML',
     done: false
 }
 
 const agregarTodoAction = {
     type: 'agregar',
-    payload: newTodo
+    payload: nuevaTarea
 }
 
-todos = todoReducer(todos, agregarTodoAction );
+todos = todoReducer(todos, agregarTodoAction);
+
 console.log(todos);
