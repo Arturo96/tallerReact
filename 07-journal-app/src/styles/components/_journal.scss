@@ -1,0 +1,94 @@
+.journal {
+
+    &__main {
+        position: relative;
+        display: flex;
+    }
+
+    &__sidebar {
+        background-color: $dark-grey;
+        color: $white;
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        padding: 0 1rem;
+        width: 30%;
+        height: 100vh;
+
+        &-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        h3 {
+            font-weight: lighter;
+        }
+    }
+
+    &__new-entry {
+        @include flexCenter();
+        cursor: pointer;
+        flex-direction: column;
+        margin-top: 2rem;
+        transition: color .3s;
+
+        &:hover {
+            color: darken($white, 20);
+        }
+    }
+
+    &__entries {
+        flex: auto;
+        margin-top: 2rem;
+        overflow-y: auto;
+    }
+
+    &__entry {
+        background-color: $white;
+        border-radius: 4px;
+        color: $dark-grey;
+        cursor: pointer;
+        display: flex;
+        margin: 0 .5rem 1rem;
+        margin-left: 0;
+        overflow: hidden;
+        transition: background-color .3s;
+
+        &:hover {
+            background-color: darken($white, $amount: 15);
+        }
+
+        &-picture {
+            // height: $size-entry-picture;
+            width: $w-picture;
+            background: url("https://www.lapatria.com/sites/default/files/styles/620x/public/imagenprincipal/2019/Noviembre/aguas_termales-jft_33.jpg") center / cover ;
+        }
+
+        &-body {
+            width: calc(100% - #{$w-picture});
+            padding: 1rem;
+        }
+
+        &-title {
+            font-style: 14px;
+            font-weight: bold;
+        }
+
+        &-content {
+            margin-top: .5rem;
+            font-size: 11px;
+            line-height: 1.25;
+        }
+
+        &-date {
+            @include flexCenter();
+            flex-direction: column;
+            padding: .5rem;
+
+            span {
+                font-size: .8em;
+            }
+        }
+    }
+}

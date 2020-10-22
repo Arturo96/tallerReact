@@ -1,0 +1,10 @@
+.nothing {
+
+    &__main {
+        @include flexCenter();
+        flex-direction: column;
+        background-color: $primary;
+        color: $white;
+        min-height: 100vh;
+    }
+}

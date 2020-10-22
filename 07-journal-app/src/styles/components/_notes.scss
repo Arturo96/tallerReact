@@ -1,0 +1,67 @@
+.notes {
+	&__main {
+		position: absolute;
+		width: 70%;
+		left: 30%;
+		display: flex;
+		min-height: 100vh;
+		flex-direction: column;
+		background-color: #EAF9D9;
+	}
+
+	&__appbar {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		background-color: $primary;
+		color: $white;
+		padding: 10px 20px;
+
+		button {
+			background-color: transparent;
+			display: inline-block;
+			transition: color 0.3s;
+
+			&:hover {
+				color: darken($white, 20);
+			}
+		}
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
+		padding: 1rem;
+
+		& > * {
+			margin-bottom: 1rem;
+		}
+	}
+
+	&__input,
+	&__textarea {
+        border: none;
+        outline: none;
+	}
+
+	&__input {
+        color: $dark-grey;
+		font-size: 1.25em;
+		font-weight: 700;
+	}
+
+	&__textarea {
+		border: 1px solid $black;
+		font-size: 1.1em;
+		flex-grow: 1;
+		resize: none;
+	}
+
+	&__img {
+		width: 30%;
+		margin-bottom: 0;
+		box-shadow: 5px 5px $dark-grey;
+	}
+}

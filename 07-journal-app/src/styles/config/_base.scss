@@ -1,0 +1,44 @@
+
+
+// General
+
+html {
+    font-size: 16px;
+    box-sizing: border-box;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+*,
+*::before,
+*:after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+main {
+    width: 70%;
+}
+
+@for $i from 1 through 5 {
+    .mt-#{$i} {
+        margin-top: #{$i * 5}px;
+    }
+
+    .mb-#{$i} {
+        margin-bottom: #{$i * 5}px;
+    }
+}
+
+.pointer {
+    cursor: pointer;
+}
