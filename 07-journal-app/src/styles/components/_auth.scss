@@ -49,8 +49,9 @@
         background-color: $error;
         border-radius: 5px;
         color: $bg-auth;
-        @include flexCenter();
-        margin-bottom: .5rem;
+        text-align: center;
+        // @include flexCenter();
+        margin-bottom: .75rem;
         padding: .5rem;
     }
 
