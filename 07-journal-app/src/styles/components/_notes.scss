@@ -7,6 +7,7 @@
 		min-height: 100vh;
 		flex-direction: column;
 		background-color: #EAF9D9;
+
 	}
 
 	&__appbar {
@@ -63,5 +64,19 @@
 		width: 30%;
 		margin-bottom: 0;
 		box-shadow: 5px 5px $dark-grey;
+	}
+
+	&__delete {
+		width: 75%;
+		margin: 1rem auto;
+	}
+}
+
+.nothing {
+
+	&__main {
+		position: absolute;
+		width: 70%;
+		left: 30%;
 	}
 }
