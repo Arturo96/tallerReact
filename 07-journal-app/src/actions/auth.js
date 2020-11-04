@@ -28,7 +28,18 @@ export const registerEmailPwdName = (email, pwd, name) => {
 				
 				await user.updateProfile({displayName: name});
 
+				// Redirigir a la pagina
+				/*
+				const configuracion = {url: 'http://localhost:puerto'}
+				*/
+
+				// Enviar verificación por correo como bna practica
+
+				//await user.sendEmailVerification(configuration).catch(....)
+
 				dispatch(login(user.uid, user.displayName))
+
+				
 			}).catch(err => {
 				console.error(err)
 				Swal.fire('Error', err.message, 'error');
