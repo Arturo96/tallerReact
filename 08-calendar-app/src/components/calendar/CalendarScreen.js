@@ -8,34 +8,42 @@ import moment from "moment";
 import 'moment/locale/es';
 import { CalendarEvent } from "./CalendarEvent";
 import { CalendarModal } from "./CalendarModal";
+import { useDispatch, useSelector } from "react-redux";
+import { uiOpenModal } from "../../actions/ui";
+import { eventClearActive, eventSetActive } from "../../actions/events";
+import { AddEvent } from "../ui/AddEvent";
+import { DeleteEvent } from "../ui/DeleteEvent";
 
 moment.locale('es');
 
-const localizer = momentLocalizer(moment),
-    events = [{
-        title: 'Cumpleaños del jefe',
-        start: moment().toDate(), // new Date()
-        end: moment().add(2, 'hours').toDate(),
-        notes: 'Comprar el pastel',
-        user: {
-            _id: '123',
-            name: 'Arturo'
-        }
-    }];
-
+const localizer = momentLocalizer(moment);
+   
 export const CalendarScreen = () => {
+
+    const {events} = useSelector(state => state.calendar)
+    
+    
+    const {activeEvent}  = useSelector(state => state.calendar);
+    const dispatch = useDispatch();
 
     const [lastView, setLastView] = useState(localStorage.getItem('lastView') || 'month');
 
     const onDoubleClick = (e) => {
+        dispatch(uiOpenModal());
     }
 
     const onSelectEvent = (e) => {
+        dispatch(eventSetActive(e))
+        
     }
 
     const onViewChange = (e) => {
         setLastView(e)
         localStorage.setItem('lastView', e);
+    }
+
+    const onSelectSlot = (e) => {
+        dispatch(eventClearActive());
     }
 
     const eventStyleGetter = (event, start, end, isSelected) => {
@@ -64,6 +72,8 @@ export const CalendarScreen = () => {
                 onDoubleClickEvent={ onDoubleClick }
                 onSelectEvent={ onSelectEvent }
                 onView={ onViewChange }
+                onSelectSlot={onSelectSlot}
+                selectable={true}
                 view={lastView}
                 components={{
                     event: CalendarEvent 
@@ -71,6 +81,9 @@ export const CalendarScreen = () => {
 			/>
 
             <CalendarModal />
+
+            {activeEvent && <DeleteEvent />}
+            <AddEvent />
 		</div>
 	);
 };
