@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import { Navbar } from "../ui/Navbar";
 import { messages } from "../../helpers/calendar-messages-es";
 
@@ -10,7 +10,7 @@ import { CalendarEvent } from "./CalendarEvent";
 import { CalendarModal } from "./CalendarModal";
 import { useDispatch, useSelector } from "react-redux";
 import { uiOpenModal } from "../../actions/ui";
-import { eventClearActive, eventSetActive } from "../../actions/events";
+import { eventClearActive, eventSetActive, eventStartLoading } from "../../actions/events";
 import { AddEvent } from "../ui/AddEvent";
 import { DeleteEvent } from "../ui/DeleteEvent";
 
@@ -22,9 +22,15 @@ export const CalendarScreen = () => {
 
     const {events} = useSelector(state => state.calendar)
     
-    
-    const {activeEvent}  = useSelector(state => state.calendar);
+    const {activeEvent} = useSelector(state => state.calendar);
+
+    const {uid} = useSelector(state => state.auth);
+
     const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(eventStartLoading());
+    }, [dispatch])
 
     const [lastView, setLastView] = useState(localStorage.getItem('lastView') || 'month');
 
@@ -49,7 +55,7 @@ export const CalendarScreen = () => {
     const eventStyleGetter = (event, start, end, isSelected) => {
 
         const style = {
-            backgroundColor: '#367CF7',
+            backgroundColor: (uid === event.user._id) ? '#367CF7' : '#0b8043',
             color: '#fafafa'
             
         }
